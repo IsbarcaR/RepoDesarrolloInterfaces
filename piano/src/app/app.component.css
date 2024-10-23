@@ -1,0 +1,9 @@
+ul{
+    align-items: center;
+    margin: 200px;
+}
+li{
+    text-align: center;
+    width: 1000px;
+    height: 40px;
+}
