@@ -1,0 +1,15 @@
+<div class="dados-container">
+    <div>
+      <h2 class="text-center mb-4">Juego de Dados</h2>
+      <div class="dados">
+        <img *ngIf="!rodando" [src]="'assets/images/dado' + dado1 + '.png'" alt="Dado 1" class="dado-img me-3">
+        <img *ngIf="!rodando" [src]="'assets/images/dado' + dado2 + '.png'" alt="Dado 2" class="dado-img">
+        <img *ngIf="rodando" src="assets/images/dado1.png" alt="Rodando..." class="dado-img me-3 rodando">
+        <img *ngIf="rodando" src="assets/images/dado1.png" alt="Rodando..." class="dado-img rodando">
+      </div>
+      <div class="text-center mb-4">
+        <button (click)="lanzarDados()" [disabled]="rodando">Tirar Dados</button>
+      </div>
+      <div class="mensaje-victoria" *ngIf="mensajeVictoria">{{ mensajeVictoria }}</div>
+    </div>
+  </div>

@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>Gestor de tareas</h1>
+    <app-task-input (newTask)="addTask($event)"></app-task-input>
+    <div *ngIf="(tasks$ | async)?.length === 0">
+      No hay tareas aún. ¡Añade algunas!
+    </div>
+    <ul class="list-group">
+      <app-task-item *ngFor="let task of tasks$ | async" 
+                     [task]="task" 
+                     (delete)="deleteTask(task.id)" 
+                     (toggle)="toggleTaskStatus(task.id)">
+      </app-task-item>
+    </ul>
+  </div>
+  
